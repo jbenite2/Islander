@@ -1,0 +1,15 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'My New Hugo Site'
+theme= "dream"
+
+[params]
+  background = "#fff"
+  backgroundImage = "/img/main.jpg"
+  linkColor = "seagreen"
+headerTitle = "Puerto Rico"
+
+
+[params.advanced]
+  customCSS = ["css/custom.css"]
+ 
