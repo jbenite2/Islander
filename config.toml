@@ -5,7 +5,7 @@ theme= "dream"
 
 [params]
   background = "#fff"
-  backgroundImage = "/img/main.jpg"
+  backgroundImage = "/img/cover.jpg"
   linkColor = "seagreen"
 headerTitle = "Puerto Rico"
 
