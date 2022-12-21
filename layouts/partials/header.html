@@ -1,4 +1,11 @@
 <header class="ui basic very padded segment dream-header">
+  <h1 class="ui medium header">
+    {{- if .Site.Params.headerTitle -}} {{- .Site.Params.headerTitle -}} {{-
+    else -}} Set headerTitle in the config to display {{- end -}}
+    <span class="sub header">
+      {{- .Site.Params.motto | safeHTML -}}
+    </span>
+  </h1>
   <!-- {{ if isset .Site.Params "avatar" }}
   <div class="ui small circular image">
     <img src="{{ .Site.Params.avatar | relURL }}" alt="avatar" />
