@@ -3,14 +3,21 @@
   <div class="ui small circular image">
     <img src="{{ .Site.Params.avatar | relURL }}" alt="avatar" />
   </div>
-  {{ end }} -->
+  {{ end }}
 
-  <!-- <div class="content"> -->
-  <!-- <h1 class="ui medium header">
-    Puerto Rico
-  </h1> -->
+  <div class="content">
+    <h1 class="ui medium header">
+      {{- if .Site.Params.headerTitle -}}
+        {{- .Site.Params.headerTitle -}}
+      {{- else -}}
+        Set headerTitle in the config to display
+      {{- end -}}
+      <span class="sub header">
+        {{- .Site.Params.motto | safeHTML -}}
+      </span>
+    </h1>
 
-  <!-- <article class="ui horizontal list">
+    <article class="ui horizontal list">
       {{ if gt (len (where .Site.RegularPages "Section" "==" "posts")) 0 }}
       <a class="item" href="{{ "posts" | relLangURL }}">
         <i class="archive icon" title="{{ T "archives" }}"></i>
@@ -38,9 +45,9 @@
     {{ if $maxTags }}
 
     {{ $first = first $maxTags $tags }}
-    {{ $rest = last (sub $sum $maxTags) $tags }} -->
+    {{ $rest = last (sub $sum $maxTags) $tags }}
 
-  <!-- <div class="tags-with-dropdown">
+    <div class="tags-with-dropdown">
       <div class="ui accordion">
         <div class="title">
           <div class="ui horizontal list">
@@ -49,37 +56,34 @@
             </a>
           </div>
           <div class="dream-tags">
-            {{ range $tag := $first }} {{ $title := index $tag "title" }} {{
-            $link := index $tag "link" }}
+          {{ range $tag := $first }}
+          {{ $title := index $tag "title" }}
+          {{ $link := index $tag "link" }}
             <a class="ui label" href="{{ $link }}" title="{{ $title }}">
               {{ $title }}
             </a>
-            {{ end }}
+          {{ end }}
           </div>
         </div>
         <div class="content">
-          {{ else }} {{ $rest = $tags }} {{ end }}
-          <div
-            class="dream-tags"
-            {{
-            if
-            $maxTags
-            }}
-            style="margin-left: 1.5rem;"
-            {{
-            end}}
-          >
-            {{ range $tag := $rest }} {{ $title := index $tag "title" }} {{
-            $link := index $tag "link" }}
+    {{ else }}
+    {{ $rest = $tags }}
+    {{ end }}
+          <div class="dream-tags"{{ if $maxTags }} style="margin-left: 1.5rem;"{{ end}}>
+          {{ range $tag := $rest }}
+          {{ $title := index $tag "title" }}
+          {{ $link := index $tag "link" }}
             <a class="ui label" href="{{ $link }}" title="{{ $title }}">
               {{ $title }}
             </a>
-            {{ end }}
+          {{ end }}
           </div>
-          {{ if $maxTags }}
+    {{ if $maxTags }}
         </div>
       </div>
     </div>
-    {{ end }} {{ end }} -->
-  <!-- </div> -->
+    {{ end }}
+
+    {{ end }}
+  </div> -->
 </header>
