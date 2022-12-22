@@ -1,5 +1,6 @@
-{{ if isset .Site.Params "favicon" }}
-<link href="{{ .Site.Params.favicon }}" rel="shortcut icon" type="image/x-icon" />
+{{ $favicon := .Site.Params.favicon }}
+{{ if $favicon }}
+  <link rel="shortcut icon" href="{{ $favicon }}">
 {{ end }}
 
 {{ if eq .Type "posts" }}
