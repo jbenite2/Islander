@@ -1,6 +1,6 @@
 baseURL = 'http://islanderpr.com/'
 languageCode = 'en-us'
-title = 'Islander PR'
+title = 'My New Hugo Site'
 theme= "dream"
 
 [params]
