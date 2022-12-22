@@ -1,5 +1,5 @@
 ---
-title: "Plaza"
+title: "Plaza las Americas"
 date: 2022-12-21T17:34:36-04:00
 draft: true
 author: Jose Benitez
