@@ -1,11 +1,11 @@
 ---
-title: Arena_medalla
+title: Arena Medalla
 date: 2022-12-22T00:02:59-04:00
 lastmod: 2022-12-22T00:02:59-04:00
-author: Author Name
+author: Jose Benitez
 # avatar: /img/author.jpg
 # authorlink: https://author.site
-cover: /img/cover.jpg
+cover: /img/medalla1.jpg
 # images:
 #   - /img/cover.jpg
 categories:

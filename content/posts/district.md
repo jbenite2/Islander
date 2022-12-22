@@ -1,11 +1,11 @@
 ---
-title: District
+title: District Live
 date: 2022-12-22T00:07:03-04:00
 lastmod: 2022-12-22T00:07:03-04:00
-author: Author Name
+author: Jose Benitez
 # avatar: /img/author.jpg
 # authorlink: https://author.site
-cover: /img/cover.jpg
+cover: /img/district1.jpg
 # images:
 #   - /img/cover.jpg
 tags:
