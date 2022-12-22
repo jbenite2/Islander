@@ -1,6 +1,6 @@
 ---
 title: Condado Beach
-date: 2022-07-01T14:49:43-05:00
+date: 2022-09-12T14:49:43-05:00
 lastmod: 2022-07-01T14:49:43-05:00
 author: Jose Benitez
 # avatar: ./img/hd.jpg
