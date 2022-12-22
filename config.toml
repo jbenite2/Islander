@@ -3,13 +3,14 @@ languageCode = 'en-us'
 title = 'Islander PR'
 theme= "dream"
 
-favicon = "/img/favicon.ico"
+
 
 [params]
   background = "#fff"
   backgroundImage = "/img/cover1.jpg"
   linkColor = "seagreen"
   headerTitle = "Puerto Rico"
+  favicon = "/img/favicon.ico"
 
 
 [params.advanced]
