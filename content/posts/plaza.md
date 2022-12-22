@@ -4,9 +4,9 @@ date: 2022-12-21T17:34:36-04:00
 draft: true
 author: Jose Benitez
 cover: /img/plaza1.jpg
-categories:
-  - category1
 tags:
+  - category1
+categories:
   - Malls
   
 draft: false
