@@ -1,13 +1,13 @@
 baseURL = 'http://islanderpr.com/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Islander PR'
 theme= "dream"
 
 [params]
   background = "#fff"
   backgroundImage = "/img/cover1.jpg"
   linkColor = "seagreen"
-headerTitle = "Puerto Rico"
+  headerTitle = "Puerto Rico"
 
 
 [params.advanced]
