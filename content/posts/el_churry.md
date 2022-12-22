@@ -8,10 +8,10 @@ author: Jose Benitez
 cover: /img/churry.jpg
 # images:
 #   - /img/cover.jpg
-categories:
-    - category1
 tags:
-    - Restaurants
+  - category1
+categories:
+  - Restaurants
 # nolastmod: true
 draft: false
 ---

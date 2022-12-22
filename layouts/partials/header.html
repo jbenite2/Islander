@@ -23,16 +23,16 @@
       </a>
     </article>
 
-    {{ if .Site.Taxonomies.tags }}
+    {{ if .Site.Taxonomies.categories }}
     {{ $tags := slice }}
     {{ $first := slice }}
     {{ $rest := slice }}
-    {{ range .Site.Taxonomies.tags }}
+    {{ range .Site.Taxonomies.categories }}
       {{ $tags = $tags | append (dict "title" .Page.Title "link" .Page.RelPermalink) }}
     {{ end }}
     {{ $sum := len $tags }}
 
-    {{ $maxTags := .Site.Params.maxTags }}
+    {{ $maxTags := .Site.Params.categoriesLimitInHeader }}
 
     {{ if $maxTags }}
 
@@ -42,11 +42,6 @@
     <div class="tags-with-dropdown">
       <div class="ui accordion">
         <div class="title">
-          <!-- <div class="ui horizontal list">
-            <a class="item dropdown" href="#">
-              <i class="chevron right icon dropdown-icon"></i>
-            </a>
-          </div> -->
           <div class="dream-tags">
           {{ range $tag := $first }}
           {{ $title := index $tag "title" }}

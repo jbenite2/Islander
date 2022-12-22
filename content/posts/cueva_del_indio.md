@@ -8,10 +8,10 @@ author: Jose Benitez
 cover: /img/cuevadelindio0.jpg
 # images:
 #   - /img/cover.jpg
-categories:
-    - category1
 tags:
-    - Caves
+  - category1
+categories:
+  - Caves
 
 # nolastmod: true
 draft: false
@@ -27,5 +27,3 @@ draft: false
 ![alt text](/img/cuevadelindio5.jpg)
 ![alt text](/img/cuevadelindio6.jpg)
 ![alt text](/img/cuevadelindio.jpg)
-
-

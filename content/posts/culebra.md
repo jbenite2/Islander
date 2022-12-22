@@ -8,18 +8,16 @@ author: Jose Benitez
 cover: /img/culebra0.jpg
 # images:
 #   - /img/cover.jpg
-categories:
-  - category1
 tags:
+  - category1
+categories:
   - Beaches
 
 # nolastmod: true
 draft: false
 ---
 
-
-•	If you’re like me and like planning a trip with anticipation you must put Culebra high in the priority when in the Island. As you may know, Puerto Rico is an archipelago. Culebra is a small island located at the east of the main island. To get here you have to get ferry tickets. The beaches in Culebra have crystal clear water and are simply beautiful. In my opinion Culebra, Vieques, and Palomino, all near each other, are one of the most beautiful places in the whole Caribbean.
-
+• If you’re like me and like planning a trip with anticipation you must put Culebra high in the priority when in the Island. As you may know, Puerto Rico is an archipelago. Culebra is a small island located at the east of the main island. To get here you have to get ferry tickets. The beaches in Culebra have crystal clear water and are simply beautiful. In my opinion Culebra, Vieques, and Palomino, all near each other, are one of the most beautiful places in the whole Caribbean.
 
 ![alt text](/img/culebra0.jpg)
 ![alt text](/img/culebra1.jpg)
