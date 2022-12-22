@@ -29,9 +29,7 @@
               {{ else }}
               <p>© {{ now.Year }} {{ .Site.Title }}</p>
               {{ end }}
-
-              <p>Powered by with theme.</p>
-
+              
               {{ if .Site.Params.footerBottomText }}
               <p>{{ .Site.Params.footerBottomText | safeHTML }}</p>
               {{ end }}
