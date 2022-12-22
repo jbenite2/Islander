@@ -3,7 +3,7 @@ languageCode = 'en-us'
 title = 'Islander PR'
 theme= "dream"
 
-favicon = "/favicon.ico"
+favicon = "/img/favicon.ico"
 
 [params]
   background = "#fff"
