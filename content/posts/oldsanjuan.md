@@ -17,7 +17,7 @@ categories:
 draft: false
 ---
 
-• I decided not to assign a tag to this spot because you can't limit this magical place to simply one category. Instead what I'll do is break down this "islote" (tiny island), called Old San Juan, by parts. [🧭](https://www.google.com/maps/place/Viejo+San+Juan,+San+Juan/@18.4645619,-66.124844,15z/data=!3m1!4b1!4m5!3m4!1s0x8c036eb8b656b379:0x86bd62881c6ab915!8m2!3d18.463203!4d-66.1147571)
+• I decided not to assign a tag to this spot because you can't limit this magical place to simply one category. Instead what I'll do is break down this "islote" (tiny island), called Old San Juan, by parts. Click here for directions: [🧭](https://www.google.com/maps/place/Viejo+San+Juan,+San+Juan/@18.4645619,-66.124844,15z/data=!3m1!4b1!4m5!3m4!1s0x8c036eb8b656b379:0x86bd62881c6ab915!8m2!3d18.463203!4d-66.1147571)
 
 ![alt text](/img/oldsanjuan0.jpg)
 
