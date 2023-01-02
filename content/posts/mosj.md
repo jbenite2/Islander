@@ -1,6 +1,6 @@
 ---
 title: Mall of San Juan
-date: 2022-02-01T14:49:43-05:00
+date: 2023-01-02T14:49:43-05:00
 author: Jose Benitez
 # avatar: ./img/hd.jpg
 # authorlink: https://author.site
