@@ -11,7 +11,7 @@ cover: /img/oldsanjuan0.jpg
 tags:
   - category1
 categories:
-  - Historic
+  - Adventure
 
 # nolastmod: true
 draft: false
