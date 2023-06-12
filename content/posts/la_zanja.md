@@ -5,7 +5,7 @@ lastmod: 2022-07-01T15:05:16-05:00
 author: Jose Benitez
 # avatar: /img/author.png
 # authorlink: https://author.site
-cover: /img//zanjas0.png
+cover: /img/zanjas0.png
 # images:
 #   - /img/cover.jpg
 tags:
@@ -23,4 +23,3 @@ draft: false
 ![alt text](/img/zanjas3.png)
 ![alt text](/img/zanjas4.png)
 ![alt text](/img/zanjas5.png)
-![alt text](/img/zanjas6.png)
