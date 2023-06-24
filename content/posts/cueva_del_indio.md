@@ -26,4 +26,4 @@ draft: false
 ![alt text](/img/cuevadelindio4.jpg)
 ![alt text](/img/cuevadelindio5.jpg)
 ![alt text](/img/cuevadelindio6.jpg)
-![alt text](/img/cuevadelindio.jpg)
+![alt text](/img/cuevaindio.jpg)

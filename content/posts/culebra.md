@@ -24,4 +24,4 @@ draft: false
 ![alt text](/img/culebra2.jpg)
 ![alt text](/img/culebra3.jpg)
 ![alt text](/img/culebra4.jpg)
-![alt text](/img/culebra5.jpg)
+![alt text](/img/culebra5.png)
