@@ -1,15 +1,25 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-@theme inline {
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --color-emerald-50: #ecfdf5;
-  --color-emerald-600: #059669;
-  --color-emerald-700: #047857;
+:root {
+  --forest: #183326;
+  --moss: #2a5240;
+  --sun: #e8941a;
+  --ocean: #1a7a8a;
+  --cream: #f7f3eb;
+  --sand: #ede5d0;
+  --ink: #0d0d0d;
+  --white: #ffffff;
+  --muted: #7a8a7e;
 }
 
-body {
-  font-family: var(--font-sans);
+@theme inline {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --color-forest: var(--forest);
+  --color-moss: var(--moss);
+  --color-sun: var(--sun);
+  --color-cream: var(--cream);
+  --color-sand: var(--sand);
 }
 
 .prose img {

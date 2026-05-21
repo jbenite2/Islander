@@ -12,26 +12,20 @@ export default function CategoryFilter({
   onSelect,
 }: CategoryFilterProps) {
   return (
-    <div className="flex flex-wrap gap-2">
+    <div className="category-filter">
       <button
+        type="button"
         onClick={() => onSelect(null)}
-        className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 cursor-pointer ${
-          selected === null
-            ? "bg-emerald-600 text-white shadow-sm"
-            : "bg-white text-slate-600 hover:bg-slate-100 ring-1 ring-slate-200"
-        }`}
+        className={`category-pill${selected === null ? " active" : ""}`}
       >
         All
       </button>
       {categories.map((cat) => (
         <button
           key={cat}
+          type="button"
           onClick={() => onSelect(cat === selected ? null : cat)}
-          className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 cursor-pointer ${
-            selected === cat
-              ? "bg-emerald-600 text-white shadow-sm"
-              : "bg-white text-slate-600 hover:bg-slate-100 ring-1 ring-slate-200"
-          }`}
+          className={`category-pill${selected === cat ? " active" : ""}`}
         >
           {cat}
         </button>

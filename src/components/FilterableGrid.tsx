@@ -28,13 +28,11 @@ export default function FilterableGrid({ posts, categories }: FilterableGridProp
 
   return (
     <>
-      <div className="mb-8">
-        <CategoryFilter
-          categories={categories}
-          selected={selected}
-          onSelect={setSelected}
-        />
-      </div>
+      <CategoryFilter
+        categories={categories}
+        selected={selected}
+        onSelect={setSelected}
+      />
 
       <MasonryGrid>
         {filtered.map((post, i) => (
@@ -52,9 +50,7 @@ export default function FilterableGrid({ posts, categories }: FilterableGridProp
       </MasonryGrid>
 
       {filtered.length === 0 && (
-        <p className="text-center text-slate-400 py-12">
-          No posts in this category yet.
-        </p>
+        <p className="places-empty">No places in this category yet.</p>
       )}
     </>
   );

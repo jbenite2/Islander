@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const post = await getPostWithHtml(slug);
   if (!post) return {};
   return {
-    title: `${post.title} | Islander PR`,
+    title: `${post.title} | DelMonte Concierge`,
     description: `Discover ${post.title} in Puerto Rico`,
   };
 }
@@ -33,40 +33,32 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   });
 
   return (
-    <article className="max-w-3xl mx-auto px-6 py-10">
-      <Link
-        href="/"
-        className="inline-flex items-center gap-1 text-sm text-slate-500 hover:text-emerald-600 transition-colors mb-6"
-      >
-        &larr; Back to all posts
+    <article className="post-page">
+      <Link href="/places" className="post-back">
+        ← Back to places
       </Link>
 
-      <header className="mb-8">
-        <div className="flex items-center gap-2 mb-3">
+      <header>
+        <div className="post-tags">
           {post.categories.map((cat) => (
-            <span
-              key={cat}
-              className="text-xs font-medium px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700"
-            >
+            <span key={cat} className="post-tag">
               {cat}
             </span>
           ))}
         </div>
-        <h1 className="text-4xl font-bold tracking-tight text-slate-900">
-          {post.title}
-        </h1>
-        <p className="mt-2 text-sm text-slate-400">
-          {formattedDate} &middot; {post.author}
+        <h1 className="post-title">{post.title}</h1>
+        <p className="post-meta">
+          {formattedDate} · {post.author}
         </p>
       </header>
 
-      <div className="relative aspect-[16/9] rounded-2xl overflow-hidden mb-10 shadow-md">
+      <div className="post-cover">
         <Image
           src={post.cover}
           alt={post.title}
           fill
           sizes="(max-width: 768px) 100vw, 720px"
-          className="object-cover"
+          style={{ objectFit: "cover" }}
           placeholder="blur"
           blurDataURL={blurDataURL}
           priority
@@ -74,7 +66,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
       </div>
 
       <div
-        className="prose prose-slate prose-lg max-w-none prose-img:rounded-xl prose-img:shadow-md prose-a:text-emerald-600 prose-a:no-underline hover:prose-a:underline"
+        className="post-prose"
         dangerouslySetInnerHTML={{ __html: post.contentHtml }}
       />
     </article>

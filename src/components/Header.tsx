@@ -1,17 +1,36 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+function isPlacesSection(pathname: string) {
+  return (
+    pathname === "/places" ||
+    pathname.startsWith("/places/") ||
+    pathname.startsWith("/posts")
+  );
+}
 
 export default function Header() {
+  const pathname = usePathname();
+  const onPlaces = isPlacesSection(pathname);
+
   return (
-    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
-      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/" className="text-xl font-bold tracking-tight text-slate-900">
-          Islander <span className="text-emerald-600">PR</span>
+    <header className="guide-header">
+      <div className="guide-header-inner">
+        <Link href="/" className="guide-logo">
+          DelMonte
         </Link>
-        <nav className="flex gap-6 text-sm font-medium text-slate-600">
-          <Link href="/" className="hover:text-emerald-600 transition-colors">
-            Home
-          </Link>
-        </nav>
+        <div className="guide-header-actions">
+          {!onPlaces && (
+            <Link href="/places" className="guide-tab">
+              Places
+            </Link>
+          )}
+          <a href="/#contact" className="guide-header-cta">
+            Book Now
+          </a>
+        </div>
       </div>
     </header>
   );
