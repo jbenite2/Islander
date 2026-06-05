@@ -52,12 +52,24 @@ export function getPostBySlug(slug: string): Post | null {
   };
 }
 
+function stripCoverImageFromHtml(contentHtml: string, cover: string): string {
+  const coverPath = cover.replace(/^\./, "");
+  const escaped = coverPath.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const wrapped = new RegExp(
+    `<p>\\s*<img[^>]*src=["']${escaped}["'][^>]*>\\s*</p>\\s*`,
+    "i"
+  );
+  const bare = new RegExp(`<img[^>]*src=["']${escaped}["'][^>]*>\\s*`, "i");
+
+  return contentHtml.replace(wrapped, "").replace(bare, "");
+}
+
 export async function getPostWithHtml(slug: string): Promise<Post | null> {
   const post = getPostBySlug(slug);
   if (!post) return null;
 
   const processed = await remark().use(html, { sanitize: false }).process(post.content);
-  post.contentHtml = processed.toString();
+  post.contentHtml = stripCoverImageFromHtml(processed.toString(), post.cover);
 
   return post;
 }
