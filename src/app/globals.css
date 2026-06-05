@@ -5,12 +5,18 @@
   --forest: #183326;
   --moss: #2a5240;
   --sun: #e8941a;
-  --ocean: #1a7a8a;
-  --cream: #f7f3eb;
-  --sand: #ede5d0;
-  --ink: #0d0d0d;
+  --sky-light: #eef8fb;
+  --sky: #d4eef7;
+  --ocean: #0891b2;
+  --ocean-soft: #22b8cf;
+  --ink: #1e4d5c;
+  --palm-dark: #1b4332;
+  --palm: #2d6a4f;
+  --palm-light: #40916c;
+  --surface: #ffffff;
+  --surface-alt: #f4fafc;
   --white: #ffffff;
-  --muted: #7a8a7e;
+  --muted: #5a7a86;
 }
 
 @theme inline {
@@ -18,8 +24,8 @@
   --color-forest: var(--forest);
   --color-moss: var(--moss);
   --color-sun: var(--sun);
-  --color-cream: var(--cream);
-  --color-sand: var(--sand);
+  --color-cream: var(--surface);
+  --color-sand: var(--surface-alt);
 }
 
 .prose img {

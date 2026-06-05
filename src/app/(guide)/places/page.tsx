@@ -1,9 +1,12 @@
 import { getAllPosts } from "@/lib/posts";
 import { getBlurDataURL } from "@/lib/image-utils";
 import FilterableGrid from "@/components/FilterableGrid";
+import PalmDecor from "@/components/PalmDecor";
+
+import { showDelMonte } from "@/lib/features";
 
 export const metadata = {
-  title: "Places | DelMonte Concierge",
+  title: showDelMonte ? "Places | DelMonte Concierge" : "Islander PR — Puerto Rico",
   description: "A local guide to the best spots in Puerto Rico",
 };
 
@@ -41,8 +44,9 @@ export default async function PlacesPage() {
   return (
     <>
       <section className="places-hero">
+        <PalmDecor />
         <div className="places-hero-inner">
-          <p className="places-eyebrow">Island Guide</p>
+          <p className="places-eyebrow">Islander PR</p>
           <h1 className="places-title">
             Places <em>locals</em> actually go.
           </h1>

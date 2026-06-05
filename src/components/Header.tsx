@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { showDelMonte } from "@/lib/features";
+import IslanderLogo from "@/components/IslanderLogo";
 
 function isPlacesSection(pathname: string) {
   return (
@@ -18,19 +20,25 @@ export default function Header() {
   return (
     <header className="guide-header">
       <div className="guide-header-inner">
-        <Link href="/" className="guide-logo">
-          DelMonte
-        </Link>
-        <div className="guide-header-actions">
-          {!onPlaces && (
-            <Link href="/places" className="guide-tab">
-              Places
-            </Link>
-          )}
-          <a href="/#contact" className="guide-header-cta">
-            Book Now
-          </a>
-        </div>
+        {showDelMonte ? (
+          <Link href="/" className="guide-logo">
+            DelMonte
+          </Link>
+        ) : (
+          <IslanderLogo />
+        )}
+        {showDelMonte && (
+          <div className="guide-header-actions">
+            {!onPlaces && (
+              <Link href="/places" className="guide-tab">
+                Places
+              </Link>
+            )}
+            <a href="/#contact" className="guide-header-cta">
+              Book Now
+            </a>
+          </div>
+        )}
       </div>
     </header>
   );

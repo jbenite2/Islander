@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getAllSlugs, getPostWithHtml } from "@/lib/posts";
 import { getBlurDataURL } from "@/lib/image-utils";
+import { showDelMonte } from "@/lib/features";
 
 export async function generateStaticParams() {
   const slugs = getAllSlugs();
@@ -14,7 +15,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const post = await getPostWithHtml(slug);
   if (!post) return {};
   return {
-    title: `${post.title} | DelMonte Concierge`,
+    title: showDelMonte
+      ? `${post.title} | DelMonte Concierge`
+      : `${post.title} | Islander PR`,
     description: `Discover ${post.title} in Puerto Rico`,
   };
 }
