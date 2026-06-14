@@ -18,6 +18,26 @@ export interface Post {
   contentHtml: string;
 }
 
+function countUniqueImages(content: string, cover: string): number {
+  const images = new Set<string>();
+
+  const add = (src: string) => {
+    const normalized = src.trim().replace(/^\./, "");
+    if (normalized.startsWith("/")) images.add(normalized);
+  };
+
+  add(cover);
+
+  const imagePattern = /!\[[^\]]*\]\(([^)]+)\)/g;
+  let match = imagePattern.exec(content);
+  while (match) {
+    add(match[1]);
+    match = imagePattern.exec(content);
+  }
+
+  return images.size;
+}
+
 export function getAllPosts(): Post[] {
   const fileNames = fs.readdirSync(postsDirectory);
   const posts = fileNames
@@ -25,9 +45,13 @@ export function getAllPosts(): Post[] {
     .map((fileName) => getPostBySlug(fileName.replace(/\.md$/, "")))
     .filter((post): post is Post => post !== null && post.content.trim() !== "");
 
-  return posts.sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-  );
+  return posts.sort((a, b) => {
+    const imageDiff =
+      countUniqueImages(b.content, b.cover) - countUniqueImages(a.content, a.cover);
+    if (imageDiff !== 0) return imageDiff;
+
+    return new Date(b.date).getTime() - new Date(a.date).getTime();
+  });
 }
 
 export function getPostBySlug(slug: string): Post | null {
