@@ -1,3 +1,6 @@
+"use client";
+
+import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -20,6 +23,8 @@ export default function PostCard({
   categories,
   priority = false,
 }: PostCardProps) {
+  const navigating = useRef(false);
+
   const formattedDate = new Date(date).toLocaleDateString("en-US", {
     month: "short",
     day: "numeric",
@@ -27,7 +32,17 @@ export default function PostCard({
   });
 
   return (
-    <Link href={`/posts/${slug}`} className="place-card">
+    <Link
+      href={`/posts/${slug}`}
+      className="place-card"
+      onClick={(e) => {
+        if (navigating.current) {
+          e.preventDefault();
+          return;
+        }
+        navigating.current = true;
+      }}
+    >
       <article className="place-card-inner">
         <div className="place-card-image">
           <Image

@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { PalmIcon } from "@/components/PalmDecor";
 
 type IslanderLogoProps = {
@@ -7,6 +10,8 @@ type IslanderLogoProps = {
 };
 
 export default function IslanderLogo({ linked = true, className = "" }: IslanderLogoProps) {
+  const pathname = usePathname();
+
   const logo = (
     <span className={`islander-logo ${className}`.trim()}>
       <span className="islander-logo-palm">
@@ -17,7 +22,7 @@ export default function IslanderLogo({ linked = true, className = "" }: Islander
     </span>
   );
 
-  if (linked) {
+  if (linked && pathname !== "/places") {
     return (
       <Link href="/places" className="islander-logo-link">
         {logo}
@@ -25,5 +30,5 @@ export default function IslanderLogo({ linked = true, className = "" }: Islander
     );
   }
 
-  return logo;
+  return <span className="islander-logo-link">{logo}</span>;
 }

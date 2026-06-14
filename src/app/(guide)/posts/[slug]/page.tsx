@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import Link from "next/link";
+import BackToPlaces from "@/components/BackToPlaces";
 import { getAllSlugs, getPostWithHtml } from "@/lib/posts";
 import { getBlurDataURL } from "@/lib/image-utils";
 import { showDelMonte } from "@/lib/features";
@@ -37,9 +37,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
 
   return (
     <article className="post-page">
-      <Link href="/places" className="post-back">
-        ← Back to places
-      </Link>
+      <BackToPlaces />
 
       <header>
         <div className="post-tags">
