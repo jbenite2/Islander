@@ -44,7 +44,10 @@ export function getPostBySlug(slug: string): Post | null {
     title: data.title || slug,
     date: data.date ? new Date(data.date).toISOString() : "",
     author: data.author || "Jose Benitez",
-    cover: data.cover || "/img/cover1.jpg",
+    cover:
+      typeof data.cover === "string" && data.cover.startsWith("/")
+        ? data.cover
+        : "/img/cover1.jpg",
     categories: data.categories || [],
     tags: data.tags || [],
     content,
