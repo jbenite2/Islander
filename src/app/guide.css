@@ -311,10 +311,26 @@
   color: var(--white);
 }
 
+.places-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 640px) {
+  .places-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .places-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 .place-card {
   display: block;
-  break-inside: avoid;
-  margin-bottom: 20px;
   text-decoration: none;
   color: inherit;
 }

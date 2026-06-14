@@ -1,4 +1,4 @@
-import { getAllPosts } from "@/lib/posts";
+import { getAllPosts, getGalleryImageCount } from "@/lib/posts";
 import { getBlurDataURL } from "@/lib/image-utils";
 import FilterableGrid from "@/components/FilterableGrid";
 import PalmDecor from "@/components/PalmDecor";
@@ -32,6 +32,7 @@ export default async function PlacesPage() {
       blurDataURL: await getBlurDataURL(post.cover),
       date: post.date,
       categories: post.categories,
+      imageCount: getGalleryImageCount(post.content, post.cover),
     }))
   );
 

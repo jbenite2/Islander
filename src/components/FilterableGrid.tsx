@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import CategoryFilter from "./CategoryFilter";
 import MasonryGrid from "./MasonryGrid";
 import PostCard from "./PostCard";
@@ -12,6 +12,7 @@ interface PostData {
   blurDataURL: string;
   date: string;
   categories: string[];
+  imageCount: number;
 }
 
 interface FilterableGridProps {
@@ -19,12 +20,25 @@ interface FilterableGridProps {
   categories: string[];
 }
 
+function sortByImages(posts: PostData[]) {
+  return [...posts].sort((a, b) => {
+    const imageDiff = b.imageCount - a.imageCount;
+    if (imageDiff !== 0) return imageDiff;
+
+    return new Date(b.date).getTime() - new Date(a.date).getTime();
+  });
+}
+
 export default function FilterableGrid({ posts, categories }: FilterableGridProps) {
   const [selected, setSelected] = useState<string | null>(null);
 
-  const filtered = selected
-    ? posts.filter((p) => p.categories.includes(selected))
-    : posts;
+  const filtered = useMemo(() => {
+    const list = selected
+      ? posts.filter((p) => p.categories.includes(selected))
+      : posts;
+
+    return sortByImages(list);
+  }, [posts, selected]);
 
   return (
     <>

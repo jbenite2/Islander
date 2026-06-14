@@ -18,22 +18,20 @@ export interface Post {
   contentHtml: string;
 }
 
-function countUniqueImages(content: string, cover: string): number {
+export function getGalleryImageCount(content: string, cover: string): number {
+  const coverNorm = cover.trim().replace(/^\./, "");
   const images = new Set<string>();
-
-  const add = (src: string) => {
-    const normalized = src.trim().replace(/^\./, "");
-    if (normalized.startsWith("/")) images.add(normalized);
-  };
-
-  add(cover);
 
   const imagePattern = /!\[[^\]]*\]\(([^)]+)\)/g;
   let match = imagePattern.exec(content);
   while (match) {
-    add(match[1]);
+    const src = match[1].trim().replace(/^\./, "");
+    if (src.startsWith("/")) images.add(src);
     match = imagePattern.exec(content);
   }
+
+  if (images.size === 0) return 0;
+  if (images.size === 1 && images.has(coverNorm)) return 0;
 
   return images.size;
 }
@@ -47,7 +45,7 @@ export function getAllPosts(): Post[] {
 
   return posts.sort((a, b) => {
     const imageDiff =
-      countUniqueImages(b.content, b.cover) - countUniqueImages(a.content, a.cover);
+      getGalleryImageCount(b.content, b.cover) - getGalleryImageCount(a.content, a.cover);
     if (imageDiff !== 0) return imageDiff;
 
     return new Date(b.date).getTime() - new Date(a.date).getTime();
